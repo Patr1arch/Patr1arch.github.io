@@ -1,0 +1,56 @@
+<html>
+<head>
+<script type="text/javascript"
+  src="dygraph.js"></script>
+<link rel="stylesheet" src="dygraph.css" />
+</head>
+<body>
+<div id="graphdiv"></div>
+<script type="text/javascript">
+ 
+	function solve_ode() {
+  	var alpha = 0.99//0.09; // Брать из форм
+  	var beta = 0.01;
+  	var gamma = 0.04;
+  	var delta = 0.45//0.01;
+    
+    var timeLimit = 100;
+    
+    var prey_y = 10; // prey_y0
+    var predators_y = 5; // predators_y0 
+    
+    var step = 1; // ???
+    var currT = 0;
+    
+    var data = [];
+    
+    for (let i = 0; i < timeLimit; i++) {
+      data.push([currT, prey_y, predators_y]);
+
+      var prey_dt_dy = prey_y + step * (alpha * prey_y - beta * predators_y * prey_y);
+      var predators_dt_dy = predators_y + step * (-gamma * predators_y + delta * prey_y * predators_y);
+      
+      prey_y = prey_dt_dy;
+      predators_y = predators_dt_dy;
+      
+      currT += step;
+    }
+    
+    return data;
+  }
+  
+ 	var d = solve_ode();
+  console.log(d);
+  
+  g = new Dygraph(
+
+    // containing div
+    document.getElementById("graphdiv"),
+
+    // CSV or path to a CSV file.
+    d
+
+  );
+</script>
+</body>
+</html>

@@ -2,7 +2,9 @@
 <html lang="ru">
 <head>
 	<title>Х-Ж</title>
-	<link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript"
+  src="dygraph.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
@@ -38,18 +40,65 @@
 					<div class = "data">
 						
 					</div>
-					<div class="graph">
+					<div class="graph" id="graphdiv">
 						
 					</div>
 					<div class="inputs">
 						
 					</div>
-					<div class="switcher"
-					</div>
+					<div class="switcher">
+
+                    </div>
 				</div>
 				
 			</div>
 		</main>
-	</div>
+    </div>
+    <script type="text/javascript">
+ 
+        function solve_ode() {
+          var alpha = 0.99//0.09; // Брать из форм
+          var beta = 0.01;
+          var gamma = 0.04;
+          var delta = 0.45//0.01;
+        0
+        var timeLimit = 1000;
+        
+        var prey_y = 10; // prey_y0
+        var predators_y = 5; // predators_y0 
+        
+        var step = 0.01; // ???
+        var currT = 0;
+        
+        var data = [];
+        
+        for (let i = 0; i < timeLimit; i++) {
+          data.push([currT, prey_y, predators_y]);
+    
+          var prey_dt_dy = prey_y + step * (alpha * prey_y - beta * predators_y * prey_y);
+          var predators_dt_dy = predators_y + step * (-gamma * predators_y + delta * prey_y * predators_y);
+          
+          prey_y = prey_dt_dy;
+          predators_y = predators_dt_dy;
+          
+          currT += step;
+        }
+        
+        return data;
+      }
+      
+         var d = solve_ode();
+      console.log(d);
+      
+      g = new Dygraph(
+    
+        // containing div
+        document.getElementById("graphdiv"),
+    
+        // CSV or path to a CSV file.
+        d
+    
+      );
+    </script>
 </body>
 </html>
