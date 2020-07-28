@@ -53,7 +53,7 @@ html,body{
 .header__row {
 	display: flex;
 	justify-content: space-between;
-	height: 60px;
+	height: 70px;
 	align-items: center;
 }
 
@@ -80,7 +80,7 @@ html,body{
 .menu__link {
 	height: 20px;
 	width: 100px;
-	background-color: #ece89d;
+	background-color: #ffffff;
 	display: block;
 }
 
@@ -98,7 +98,7 @@ html,body{
 	}
 	.icon-menu span{
 		position: absolute;
-		background-color: #ece89d;
+		background-color: #ffffff;
 		position: absolute;
 		left: 0;
 		width: 100%;
@@ -108,7 +108,7 @@ html,body{
 	.icon-menu:before,
 	.icon-menu:after{
 		content: '';
-		background-color: #ece89d;
+		background-color: #ffffff;
 		position: absolute;
 		width: 100%;
 		height: 3px;
@@ -154,7 +154,6 @@ html,body{
 }
 .inp{
 	margin-left: 5px;
-
 	border: 1.5px solid #1f1f1f;
 	border-radius: 10px;
 	height: 45px;
@@ -167,7 +166,7 @@ html,body{
 	color: white;
 }
 input::placeholder{
-	font-size: 1em;
+	font-size: 1.2em;
 	text-align: center;
 }
 
@@ -180,7 +179,7 @@ input::placeholder{
 	float: left;
 	border: 1.5px solid #1f1f1f;
 	border-radius: 10px;
-	width: 850px;
+	width: 935px;
 	height: 510px;
 }
 
@@ -197,16 +196,6 @@ input::placeholder{
 	border-radius: 10px;
 	width: 375px;
 	height: 510px;
-	/*margin-right: 100px;*/
-}
-
-.switcher{
-	clear: both;
-	border: 1.5px solid #1f1f1f;
-	border-radius: 10px;
-	width: 850px;
-	height: 70px;
-	background-color: red;
 }
 
 .info-div {
@@ -221,6 +210,19 @@ input::placeholder{
 	padding-bottom: 30px;
 }
 
+.switcher{
+	clear: both;
+	width: 850px;
+	height: 70px;
+}
+
 .chart_changer {
-	font-size: 25px;
+	display: inline-block;
+	width: 120px;
+	margin-top: 10px;
+	margin-right: 10px;
+	padding: 4px 4px 4px 4px;
+	font-size: 16px;
+	border: 1.5px solid #1f1f1f;
+	border-radius: 10px;
 }
