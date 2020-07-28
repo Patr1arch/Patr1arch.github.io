@@ -39,12 +39,12 @@
 					<div class = "data">
 						<form action="javascript:solve_and_draw();">
 							<div class="inps">
-								<input type="number" id="alpha" min=0.0 step=0.01 class="inp" placeholder="alpha"></input> 
-								<input type="number" id="beta" min=0.0 step=0.01 class="inp" placeholder="beta"></input> 
-								<input type="number" id="gamma" min=0.0 step=0.01 class="inp" placeholder="gamma"></input>
-								<input type="number" id="delta" min=0.0 step=0.01 class="inp" placeholder="delta"></input> 
-								<input type="number" id="startPrey" min=0 step=1 class="inp" placeholder="Preys at start"></input> 
-								<input type="number" id="startPred" min=0 step=1 class="inp" placeholder="Predators at start"></input>
+								<input type="number" id="alpha" min=0.0 max=1.0 step=0.01 class="inp" placeholder="Prey birthrate"></input> 
+								<input type="number" id="beta" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Prey mortality rate"></input> 
+								<input type="number" id="gamma" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Predator mortality rate"></input>
+								<input type="number" id="delta" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Predator birthrate"></input> 
+								<input type="number" id="startPrey" min=0 step=1 class="inp" placeholder="Initial Prey"></input> 
+								<input type="number" id="startPred" min=0 step=1 class="inp" placeholder="Initial Predators"></input>
 								<input type="submit" value="Submit" class="inp bk">
 							</div>
 						</form>
