@@ -1,3 +1,21 @@
+function legendFormatter(data) {
+  if (data.x == null) {
+    // This happens when there's no selection and {legend: 'always'} is set.
+    return '<br>' + data.series.map(function(series) { return series.dashHTML + ' ' + series.labelHTML }).join('<br>');
+  }
+
+  var html = this.getLabels()[0] + ': ' + data.xHTML;
+  data.series.forEach(function(series) {
+    if (!series.isVisible) return;
+    var labeledData = series.labelHTML + ': ' + series.yHTML;
+    if (series.isHighlighted) {
+      labeledData = '<b>' + labeledData + '</b>';
+    }
+    html += '<br>' + series.dashHTML + ' ' + labeledData;
+  });
+  return html;
+}
+
 /*
     x = Prey
     y = Predator 
@@ -98,14 +116,19 @@ function solve_and_draw(data){
             pixelsPerLabel: 30
           }
         },
-        legend: "always",
+        xlabel: 'time',
+        ylabel: 'prey & predators',
         labelsDiv: document.getElementById('legend-div'),
         labelsSeparateLines: true,
         labelsKMB: true,
+        hideOverlayOnMouseOut: false,
         colors: ["rgb(51,204,204)",
                   "rgb(255,100,100)",
                   "#00DD55",
-                  "rgba(50,50,200,0.4)"]
+                  "rgba(50,50,200,0.4)"],
+        //highlightSeriesOpts: { strokeWidth: 2 },
+        legend: 'always',
+        legendFormatter: legendFormatter
       }
     );
   } else {
@@ -115,20 +138,25 @@ function solve_and_draw(data){
       {
         dateWindow: [-(max_val_X + 10)/20, max_val_X + 10],  // for X axis
         valueRange: [-(max_val_X + 10)/20, max_val_Y + 10],  // for Y axis
-        labels: [ "x", "predators-prey relationship" ],
+        labels: [ "x", "relationship" ],
         axes: {
           x: {
             pixelsPerLabel: 30
           }
         },
-        legend: "always",
+        xlabel: 'prey',
+        ylabel: 'predators',
         labelsDiv: document.getElementById('legend-div'),
         labelsSeparateLines: true,
         labelsKMB: true,
+        hideOverlayOnMouseOut: false,  //
         colors: ["rgb(51,204,204)",
                   "rgb(255,100,100)",
                   "#00DD55",
-                  "rgba(50,50,200,0.4)"]
+                  "rgba(50,50,200,0.4)"],
+        //highlightSeriesOpts: { strokeWidth: 2 },
+        legend: 'always',
+        legendFormatter: legendFormatter
       }
     );
   }
