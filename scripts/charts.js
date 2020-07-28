@@ -13,19 +13,27 @@
     x0 = Initial Prey
     y0 = Initial Predators
 */
-function solve_and_draw(){
-  var chart_type = 1; // 1 or 2
+
+var GL_a = NaN,
+GL_b = NaN,
+GL_c = NaN,
+GL_d = NaN,
+GL_x = NaN,
+GL_y = NaN;
+
+function solve_and_draw(data){
+  var chart_type = parseInt(data["ch_t"]); // 1 or 2
 
   let max_val_X = 0,
       max_val_Y = 0;
 
 
-  let a = parseFloat(document.getElementById("alpha").value), 
-  b = parseFloat(document.getElementById("beta").value),//0.14,
-  c = parseFloat(document.getElementById("gamma").value),//0.79,
-  d = parseFloat(document.getElementById("delta").value),//0.17,
-  x0 = parseInt(document.getElementById("startPrey").value),//10,
-  y0 = parseInt(document.getElementById("startPred").value)//5;
+  let a = parseFloat(data["a"]), 
+  b = parseFloat(data["b"]),//0.14,
+  c = parseFloat(data["c"]),//0.79,
+  d = parseFloat(data["d"]),//0.17,
+  x0 = parseInt(data["x"]),//10,
+  y0 = parseInt(data["y"])//5;
 
         
   //stationary position of the system
@@ -126,15 +134,37 @@ function solve_and_draw(){
   }
 }
 
-solve_and_draw();
+solve_and_draw({"a" : "NaN", "b" : "NaN", "c" : "NaN", "d" : "NaN", "x" : "NaN", "y" : "NaN", "ch_t" : "1"});
 
 function submit_data(){
-  document.getElementById("prey_alpha").textContent = document.getElementById("alpha").value;
-  document.getElementById("prey_beta").textContent = document.getElementById("beta").value;
-  document.getElementById("pred_gamma").textContent = document.getElementById("gamma").value;
-  document.getElementById("pred_delta").textContent = document.getElementById("delta").value;
-  document.getElementById("prey_init").textContent = document.getElementById("startPrey").value;
-  document.getElementById("pred_init").textContent = document.getElementById("startPred").value;
+  var data = [document.getElementById("alpha").value, document.getElementById("beta").value, document.getElementById("gamma").value,
+  document.getElementById("delta").value, document.getElementById("startPrey").value, document.getElementById("startPred").value];
 
-  solve_and_draw();
+  document.getElementById("prey_alpha").textContent = data[0];
+  document.getElementById("prey_beta").textContent = data[1];
+  document.getElementById("pred_gamma").textContent = data[2];
+  document.getElementById("pred_delta").textContent = data[3];
+  document.getElementById("prey_init").textContent = data[4];
+  document.getElementById("pred_init").textContent = data[5];
+
+  GL_a = data[0];
+  GL_b = data[1];
+  GL_c = data[2];
+  GL_d = data[3];
+  GL_x = data[4];
+  GL_y = data[5];
+
+  // document.getElementById("prey_alpha").textContent = document.getElementById("alpha").value;
+  // document.getElementById("prey_beta").textContent = document.getElementById("beta").value;
+  // document.getElementById("pred_gamma").textContent = document.getElementById("gamma").value;
+  // document.getElementById("pred_delta").textContent = document.getElementById("delta").value;
+  // document.getElementById("prey_init").textContent = document.getElementById("startPrey").value;
+  // document.getElementById("pred_init").textContent = document.getElementById("startPred").value;
+
+  solve_and_draw({"a" : data[0], "b" : data[1], "c" : data[2], "d" : data[3], "x" : data[4], "y" : data[5], "ch_t" : "1"});
+}
+
+function change_chart(type) {
+  var data = {"a" : GL_a, "b" : GL_b, "c" : GL_c, "d" : GL_d, "x" : GL_x, "y" : GL_y, "ch_t" : type};
+  solve_and_draw(data);
 }
