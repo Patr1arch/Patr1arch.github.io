@@ -16,26 +16,22 @@
 						<a href = "index.html"> </a>
 						<img src = "logo.png" class="header__logo"> 
 					</p>
-					<!-- <div class="modal" id="rulesModal">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="text-center"> Rules</h4>
-									<a href="#close" title="Закрыть" class="close">X</a>
-								</div>
-								<div class="modal-body rulesBody">
-									<iframe src="rules.html" frameborder="0"></iframe>
-					      		</div>
-								
-							</div>
-						</div>
-					</div> -->
 					<div class="header__menu menu">
 						<nav class="menu__body">
-							<a href="" class="menu__link">About us</a>
-							<!-- <div class="modal-body rulesBody">
-									<iframe src="AboutUs.html" frameborder="0"></iframe>
-					      	</div> -->
+							<a href="#openModal" class="menu__link">About us</a>
+							<div id="openModal" class="modal">
+								<div class="modal-dialog">
+							    	<div class="modal-content">
+							      		<div class="modal-header">
+								        	<h3 class="modal-title">About us</h3>
+								        	<a href="#close" title="Close" class="close">×</a>
+							      		</div>
+							      		<div class="modal-body">    
+							        		<p>Содержимое модального окна...</p>
+							      		</div>
+							    	</div>
+								</div>
+							</div>
 						</nav>
 					</div>
 				</div>
