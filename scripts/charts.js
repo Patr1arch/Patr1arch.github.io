@@ -19,7 +19,7 @@ function solve_and_draw(){
   let max_val_X = 0,
       max_val_Y = 0;
 
-  // TODO: get them form screen
+
   let a = parseFloat(document.getElementById("alpha").value), 
   b = parseFloat(document.getElementById("beta").value),//0.14,
   c = parseFloat(document.getElementById("gamma").value),//0.79,
@@ -44,11 +44,19 @@ function solve_and_draw(){
       
   function calculate_data() {
     for (let i = 0; i < n; i++) {
-      if (x0 < 0 || y0 < 0)
-        break;
 
-      data_chart_1.push([t, x0, y0]);
-      data_chart_2.push([x0, y0]);
+      if (x0 < 0 || y0 < 0) {
+        var n_ = n - i;
+        for (; i < Math.min(55, n_); i++) {
+          data_chart_1.push([t, 0, 0]);
+          data_chart_2.push([0, 0]);
+          t += step;
+        }
+        break;
+      } else {
+        data_chart_1.push([t, x0, y0]);
+        data_chart_2.push([x0, y0]);
+      }
 
       let x = x0 + step * (a*x0 - b*x0*y0),
           y = y0 + step * (-c*y0 + d*x0*y0);
@@ -70,7 +78,7 @@ function solve_and_draw(){
       document.getElementById("chart_1"),
       data_chart_1,
       {
-        valueRange: [0, Math.max(max_val_X, max_val_Y) + 20],  // for Y axis
+        valueRange: [-(Math.max(max_val_X, max_val_Y) + 20)/20, Math.max(max_val_X, max_val_Y) + 20],  // for Y axis
         labels: [ "x", "prey", "predator" ],
         axes: {
           x: {
@@ -86,8 +94,8 @@ function solve_and_draw(){
       document.getElementById("chart_2"),
       data_chart_2,
       {
-        dateWindow: [0, max_val_X + 10],  // for X axis
-        valueRange: [0, max_val_Y + 10],  // for Y axis
+        dateWindow: [-(max_val_X + 10)/20, max_val_X + 10],  // for X axis
+        valueRange: [-(max_val_X + 10)/20, max_val_Y + 10],  // for Y axis
         labels: [ "x", "relationship" ],
         axes: {
           x: {
