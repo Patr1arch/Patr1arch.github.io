@@ -40,7 +40,7 @@ function solve_and_draw(){
 
   if (chart_type == 1) {
     n = 2000;
-    step = 0.6;
+    step = 0.06;
   } else {
     n = 5000;
     step = 0.04;
@@ -55,7 +55,7 @@ function solve_and_draw(){
       if (x0 < 0 || y0 < 0) {
         var n_ = n - i;
         for (; i < Math.min(55, n_); i++) {
-          data_chart_1.push([t, 0, 0]);
+          data_chart_1.push([t, 0, 0, st_pos[0], st_pos[1]]);
           data_chart_2.push([0, 0]);
           t += step;
         }
