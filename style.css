@@ -141,6 +141,16 @@ html,body{
 	height: 2000px;
 }
 
+.data{
+	height: 120px;
+	margin-top: 10px;
+	background-color: white;
+	border-width: 3px;
+	border-style: solid;
+	border-color: #1f1f1f;
+	border-radius: 10px;
+}
+
 .graph{
 	width:500px;
 	height:500px;
