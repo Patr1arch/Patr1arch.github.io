@@ -72,10 +72,8 @@ function solve_and_draw(){
   calculate_data();
 
   if (chart_type == 1) {
-    document.getElementById("chart_1").hidden = false;
-    document.getElementById("chart_2").hidden = true;
     chart_1 = new Dygraph(
-      document.getElementById("chart_1"),
+      document.getElementById("chart"),
       data_chart_1,
       {
         valueRange: [-(Math.max(max_val_X, max_val_Y) + 20)/20, Math.max(max_val_X, max_val_Y) + 20],  // for Y axis
@@ -88,10 +86,8 @@ function solve_and_draw(){
       }
     );
   } else {
-    document.getElementById("chart_2").hidden = false;
-    document.getElementById("chart_1").hidden = true;
     chart_2 = new Dygraph(
-      document.getElementById("chart_2"),
+      document.getElementById("chart"),
       data_chart_2,
       {
         dateWindow: [-(max_val_X + 10)/20, max_val_X + 10],  // for X axis
