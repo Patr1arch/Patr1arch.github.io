@@ -41,7 +41,7 @@ function solve_and_draw(){
 
   let data_chart_1 = [],
       data_chart_2 = [];
-      
+
   function calculate_data() {
     for (let i = 0; i < n; i++) {
       if (x0 < 0 || y0 < 0)
@@ -100,3 +100,16 @@ function solve_and_draw(){
 }
 
 solve_and_draw();
+
+function downloadChart(){
+  var canv = null;
+  var cnvs = document.getElementsByTagName("canvas");
+  if (!document.getElementById("chart_1").hidden) {
+    canv = document.getElementsByTagName("canvas")[1];
+  }
+  else {
+    canv = document.getElementsByTagName("canvas")[1];
+  }
+  document.getElementById("downloader").download = "image.png";
+  document.getElementById("downloader").href = document.getElementsByTagName("canvas")[0].toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+}
