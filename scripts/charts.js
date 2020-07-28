@@ -27,13 +27,20 @@ function solve_and_draw(){
   x0 = parseInt(document.getElementById("startPrey").value),//10,
   y0 = parseInt(document.getElementById("startPred").value)//5;
 
+        
+  //stationary position of the system
+  let st_pos = [
+    a / b,
+    c / d
+  ];
+
   let t = 0,
     n = 0,
     step = 0;
 
   if (chart_type == 1) {
-    n = 1000;
-    step = 0.1;
+    n = 2000;
+    step = 0.6;
   } else {
     n = 5000;
     step = 0.04;
@@ -54,7 +61,7 @@ function solve_and_draw(){
         }
         break;
       } else {
-        data_chart_1.push([t, x0, y0]);
+        data_chart_1.push([t, x0, y0, st_pos[0], st_pos[1]]);
         data_chart_2.push([x0, y0]);
       }
 
@@ -77,12 +84,20 @@ function solve_and_draw(){
       data_chart_1,
       {
         valueRange: [-(Math.max(max_val_X, max_val_Y) + 20)/20, Math.max(max_val_X, max_val_Y) + 20],  // for Y axis
-        labels: [ "x", "prey", "predator" ],
+        labels: [ "x", "prey", "predator", "stationary_pos_prey", "stationary_pos_predator" ],
         axes: {
           x: {
             pixelsPerLabel: 30
           }
-        }
+        },
+        legend: "always",
+        labelsDiv: document.getElementById('legend-div'),
+        labelsSeparateLines: true,
+        labelsKMB: true,
+        colors: ["rgb(51,204,204)",
+                  "rgb(255,100,100)",
+                  "#00DD55",
+                  "rgba(50,50,200,0.4)"]
       }
     );
   } else {
@@ -92,12 +107,20 @@ function solve_and_draw(){
       {
         dateWindow: [-(max_val_X + 10)/20, max_val_X + 10],  // for X axis
         valueRange: [-(max_val_X + 10)/20, max_val_Y + 10],  // for Y axis
-        labels: [ "x", "relationship" ],
+        labels: [ "x", "predators-prey relationship" ],
         axes: {
           x: {
             pixelsPerLabel: 30
           }
-        }
+        },
+        legend: "always",
+        labelsDiv: document.getElementById('legend-div'),
+        labelsSeparateLines: true,
+        labelsKMB: true,
+        colors: ["rgb(51,204,204)",
+                  "rgb(255,100,100)",
+                  "#00DD55",
+                  "rgba(50,50,200,0.4)"]
       }
     );
   }
