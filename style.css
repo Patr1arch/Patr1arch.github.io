@@ -103,6 +103,8 @@ html,body{
 	height: 45px;
 	width: 175px;
 	background: transparent;
+	text-align: center;
+	font-size: 0.9em;
 }
 
 .bk{
@@ -110,7 +112,6 @@ html,body{
 	color: white;
 }
 input::placeholder{
-	font-size: 1.2em;
 	text-align: center;
 }
 
