@@ -136,18 +136,13 @@ html,body{
 	}
 }
 
-.black{
-	background-color: #ece89d;
-	height: 2000px;
-}
-
 .data{
 	margin-top: 15px;
 
 	background-color: white;
 	border-width: 3px;
 	border-style: solid;
-	border-color: #1f1f1f;
+	border-color: #ff7d44;
 	border-radius: 10px;
 }
 
@@ -168,14 +163,48 @@ html,body{
 }
 
 .bk{
-	background-color: green;
+	background-color: #3b8300;
+	color: white;
 }
 input::placeholder{
 	font-size: 1em;
 	text-align: center;
 }
 
+.outputs{
+	margin-top: 15px;
+	display: 
+}
+
 .graph{
-	width:500px;
-	height:500px;
+	float: left;
+	border: 1.5px solid #1f1f1f;
+	border-radius: 10px;
+	width: 850px;
+	height: 510px;
+}
+
+.first{
+/*	display: none;*/
+}
+
+.second{
+	display: none;
+}
+.inputs{
+	float: right;
+	border: 1.5px solid #1f1f1f;
+	border-radius: 10px;
+	width: 350px;
+	height: 510px;
+	/*margin-right: 100px;*/
+}
+
+.switcher{
+	clear: both;
+	border: 1.5px solid #1f1f1f;
+	border-radius: 10px;
+	width: 850px;
+	height: 70px;
+	background-color: red;
 }
