@@ -134,6 +134,7 @@ input::placeholder{
 	display: none;
 }
 .inputs{
+	padding-left: 15px;
 	float: right;
 	border: 1.5px solid #1f1f1f;
 	border-radius: 10px;
