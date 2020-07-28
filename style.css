@@ -140,3 +140,8 @@ html,body{
 	background-color: #ece89d;
 	height: 2000px;
 }
+
+.graph{
+	width:500px;
+	height:500px;
+}
