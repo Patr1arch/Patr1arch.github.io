@@ -104,3 +104,14 @@ function solve_and_draw(){
 }
 
 solve_and_draw();
+
+function submit_data(){
+  document.getElementById("prey_alpha").textContent = document.getElementById("alpha").value;
+  document.getElementById("prey_beta").textContent = document.getElementById("beta").value;
+  document.getElementById("pred_gamma").textContent = document.getElementById("gamma").value;
+  document.getElementById("pred_delta").textContent = document.getElementById("delta").value;
+  document.getElementById("prey_init").textContent = document.getElementById("startPrey").value;
+  document.getElementById("pred_init").textContent = document.getElementById("startPred").value;
+
+  solve_and_draw();
+}

@@ -38,7 +38,7 @@
 			<div class = "container">
 				<div class = "">
 					<div class = "data">
-						<form action="javascript:solve_and_draw();">
+						<form action="javascript:submit_data();">
 							<div class="inps">
 								<input type="number" id="alpha" min=0.0 max=1.0 step=0.01 class="inp" placeholder="Prey birthrate"></input> 
 								<input type="number" id="beta" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Prey mortality rate"></input> 
@@ -55,8 +55,17 @@
 							
 						</div>
 						<div class="inputs">
-							
+							<div align=center class="info-title-div"> <h1>INFO </h1></div>
+							<div class="info-div"> 
+								Prey birthrate: <span id="prey_alpha"> </span> <br /> 
+								Prey mortality rate: <span id="prey_beta"> </span> <br />
+								Predator birthrate: <span id="pred_delta"> </span> <br />
+								Predator mortality rate: <span id="pred_gamma"> </span> <br />
+								Initial Prey: <span id="prey_init"> </span> <br />
+								Initial Predators: <span id="pred_init"> </span>
+							</div>
 						</div>
+
 					</div>
 						<div class="switcher">
 						
