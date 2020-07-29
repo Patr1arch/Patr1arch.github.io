@@ -109,7 +109,7 @@ function solve_and_draw(data){
       document.getElementById("chart"),
       data_chart_1,
       {
-        valueRange: [-(Math.max(max_val_X, max_val_Y) + 20)/20, Math.max(max_val_X, max_val_Y) + 20],  // for Y axis
+        valueRange: [-(Math.max(max_val_X, max_val_Y) + 20)/20, Math.max(max_val_X, max_val_Y) + 5],  // for Y axis
         labels: [ "x", "prey", "predator", "stationary_pos_prey", "stationary_pos_predator" ],
         axes: {
           x: {
@@ -136,8 +136,8 @@ function solve_and_draw(data){
       document.getElementById("chart"),
       data_chart_2,
       {
-        dateWindow: [-(max_val_X + 10)/20, max_val_X + 10],  // for X axis
-        valueRange: [-(max_val_X + 10)/20, max_val_Y + 10],  // for Y axis
+        dateWindow: [-(max_val_X + 10)/20, max_val_X + 5],  // for X axis
+        valueRange: [-(max_val_X + 10)/20, max_val_Y + 5],  // for Y axis
         labels: [ "x", "relationship" ],
         axes: {
           x: {
@@ -156,7 +156,13 @@ function solve_and_draw(data){
                   "rgba(50,50,200,0.4)"],
         //highlightSeriesOpts: { strokeWidth: 2 },
         legend: 'always',
-        legendFormatter: legendFormatter
+        legendFormatter: legendFormatter,
+
+        zoomCallback: function(minDate, maxDate, yRange) {
+          if (minDate >= maxDate)
+            chart_2.updateOptions({dateWindow: [-(max_val_X + 10)/20, max_val_X + 5],
+              valueRange: [-(max_val_X + 10)/20, max_val_Y + 5]});
+        }
       }
     );
   }
