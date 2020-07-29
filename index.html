@@ -80,12 +80,12 @@
 					<div class = "data">
 						<form action="javascript:submit_data();">
 							<div class="inps">
-								<input type="number" id="alpha" min=0.0 max=1.0 step=0.01 class="inp" placeholder="Prey birthrate"></input> 
-								<input type="number" id="beta" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Prey mortality rate"></input> 
-								<input type="number" id="gamma" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Predator mortality rate"></input>
-								<input type="number" id="delta" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Predator birthrate"></input> 
-								<input type="number" id="startPrey" min=0 step=1 class="inp" placeholder="Initial Prey"></input> 
-								<input type="number" id="startPred" min=0 step=1 class="inp" placeholder="Initial Predators"></input>
+								<input type="number" id="alpha" min=0.0 max=1.0 step=0.01 class="inp" placeholder="Prey birthrate" value="0.9"></input> 
+								<input type="number" id="beta" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Prey mortality rate" value="0.3"></input> 
+								<input type="number" id="gamma" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Predator mortality rate" value="1.0"></input>
+								<input type="number" id="delta" max=1.0 min=0.0 step=0.01 class="inp" placeholder="Predator birthrate" value="0.5"></input> 
+								<input type="number" id="startPrey" min=0 step=1 class="inp" placeholder="Initial Prey" value="3"></input> 
+								<input type="number" id="startPred" min=0 step=1 class="inp" placeholder="Initial Predators" value="2"></input>
 								<input type="submit" value="Submit" class="inp bk">
 							</div>
 						</form>
@@ -99,8 +99,8 @@
 							<div class="info-div"> 
 								<p class = "font_size">Prey birthrate: <span id="prey_alpha"> 0.9</span> <br /> 
 								Prey mortality rate: <span id="prey_beta"> 0.3</span> <br />
-								Predator birthrate: <span id="pred_delta"> 1</span> <br />
-								Predator mortality rate: <span id="pred_gamma"> 0.5</span> <br />
+								Predator birthrate: <span id="pred_delta"> 0.5</span> <br />
+								Predator mortality rate: <span id="pred_gamma"> 1.0</span> <br />
 								Initial Prey: <span id="prey_init"> 3</span> <br />
 								Initial Predators: <span id="pred_init"> 2</span> </p>
 							</div>
