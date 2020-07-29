@@ -122,10 +122,10 @@ function solve_and_draw(data){
         labelsSeparateLines: true,
         labelsKMB: true,
         hideOverlayOnMouseOut: false,
-        colors: ["rgb(51,204,204)",
+        colors: ["#00DD55",
                   "rgb(255,100,100)",
-                  "#00DD55",
-                  "rgba(50,50,200,0.4)"],
+                  "rgb(51,204,204)",
+                  "rgb(50,50,200)"],
         //highlightSeriesOpts: { strokeWidth: 2 },
         legend: 'always',
         legendFormatter: legendFormatter
