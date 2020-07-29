@@ -11,6 +11,10 @@ html,body{
 	height: 100%;
 }
 
+.low-res{
+	display: none;
+}
+
 .wrapper{
 	display: flex;
 	min-height: 100%;
@@ -425,7 +429,7 @@ input::placeholder{
 		font-size: 1em;
 	}
 	.graph{
-		width: 960px;
+		width: 935px;
 	}
 
 	.chart_changer{
@@ -695,17 +699,18 @@ input::placeholder{
 	}
 }
 
-@media (max-width:830px){
+@media (max-width:833px){
 	.inps{
-		margin-left: 40px;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 
 	.inp{
-		width: 250px;
+		width: 240px;
 		font-size: 0.8em;
 	}
 	.bk{
-		width: 770px;
+		width: 737px;
 		font-size: 1em;
 	}
 	.graph{
@@ -716,21 +721,57 @@ input::placeholder{
 		width: 100px;
 	}
 	.inputs{
-		width: 230px;
+		width: 200px;
 	}
 	.font_size{
-		font-size: 15px;
+		font-size: 12px;
 	}
 	.legend-div{
-		font-size: 15px;
+		font-size: 12px;
 	}
 }
 
 
-@media (max-width:767px){
-	
+@media (max-width:800px){
+	.inps{
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.inp{
+		width: 231px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 715px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 550px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 200px;
+	}
+	.font_size{
+		font-size: 12px;
+	}
+	.legend-div{
+		font-size: 12px;
+	}
 }
 
-@media (max-width:420px){
-	
+@media (max-width:790px){
+	main{
+		display: none;
+	}
+	.low-res{
+		margin-top: 250px;
+		display: block;
+		text-align: center;
+		font-size: 25px;
+	}
 }
