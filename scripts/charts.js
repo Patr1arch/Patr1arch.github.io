@@ -32,12 +32,12 @@ function legendFormatter(data) {
     y0 = Initial Predators
 */
 
-var GL_a = NaN,
-GL_b = NaN,
-GL_c = NaN,
-GL_d = NaN,
-GL_x = NaN,
-GL_y = NaN;
+var GL_a = 0.9,
+GL_b = 0.3,
+GL_c = 1.0,
+GL_d = 0.5,
+GL_x = 3,
+GL_y = 2;
 
 function solve_and_draw(data){
   var chart_type = parseInt(data["ch_t"]); // 1 or 2
@@ -168,7 +168,7 @@ function solve_and_draw(data){
   }
 }
 
-solve_and_draw({"a" : "NaN", "b" : "NaN", "c" : "NaN", "d" : "NaN", "x" : "NaN", "y" : "NaN", "ch_t" : "1"});
+solve_and_draw({"a" : "0.9", "b" : "0.3", "c" : "1.0", "d" : "0.5", "x" : "3", "y" : "2", "ch_t" : "1"});
 
 function submit_data(){
   var data = [document.getElementById("alpha").value, document.getElementById("beta").value, document.getElementById("gamma").value,
