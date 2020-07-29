@@ -92,12 +92,13 @@ html,body{
 
 .inps{
 	margin-left: 15px;
-	margin-top: 15px;
+
 	margin-right: 15px;
 	margin-bottom: 15px;
 }
 .inp{
 	margin-left: 5px;
+	margin-top: 15px;
 	border: 1.5px solid #1f1f1f;
 	border-radius: 10px;
 	height: 45px;
@@ -106,6 +107,7 @@ html,body{
 	text-align: center;
 	font-size: 0.9em;
 }
+
 
 .bk{
 	background-color: #3b8300;
@@ -128,12 +130,6 @@ input::placeholder{
 	height: 510px;
 }
 
-.first{
-}
-
-.second{
-	display: none;
-}
 .inputs{
 	padding-left: 15px;
 	float: right;
@@ -413,4 +409,328 @@ input::placeholder{
     flex: 1 1 auto;
     padding: 15px;
     overflow: auto;
+}
+@media (max-width: 1345px){
+	.inps{
+		margin-left: 30px;
+	}
+
+	.inp{
+		width: 200px;
+		font-size: 0.8em;
+	}
+	.bk{
+		/*margin-top: 15px;*/
+		width: 1250px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 960px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 320px;
+	}
+	.font_size{
+		font-size: 20px;
+	}
+	.legend-div{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 1319px){
+	.inps{
+		margin-left: 45px;
+	}
+
+	.inp{
+		width: 190px;
+		font-size: 0.8em;
+	}
+	.bk{
+		/*margin-top: 15px;*/
+		width: 1190px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 940px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 320px;
+	}
+	.font_size{
+		font-size: 20px;
+	}
+	.legend-div{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 1280px){
+	.inps{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.inp{
+		width: 190px;
+		font-size: 0.8em;
+	}
+	.bk{
+		/*margin-top: 15px;*/
+		width: 1190px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 900px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 300px;
+	}
+	.font_size{
+		font-size: 20px;
+	}
+	.legend-div{
+		font-size: 20px;
+	}
+}
+
+@media (max-width:1243px){
+	.inps{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.inp{
+		width: 188px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 1175px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 800px;
+	}
+
+	.inputs{
+		width: 350px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+}
+
+@media (max-width:1232px){
+	.inp{
+		width: 165px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 1036px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 700px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+}
+
+@media (max-width: 1111px){
+	.inps{
+		margin-left: 30px;
+	}
+
+	.inp{
+		width: 300px;
+		font-size: 0.8em;
+	}
+	.bk{
+		/*margin-top: 15px;*/
+		width: 920px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 650px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 320px;
+	}
+	.font_size{
+		font-size: 20px;
+	}
+	.legend-div{
+		font-size: 20px;
+	}
+}
+@media (max-width:1006px){
+	.inps{
+		margin-left: 30px;
+	}
+
+	.inp{
+		width: 290px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 890px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 625px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 320px;
+	}
+	.font_size{
+		font-size: 20px;
+	}
+	.legend-div{
+		font-size: 20px;
+	}
+}
+
+@media (max-width:993px){
+	.inps{
+		margin-left: 40px;
+	}
+
+	.inp{
+		width: 250px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 770px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 600px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 250px;
+	}
+	.font_size{
+		font-size: 15px;
+	}
+	.legend-div{
+		font-size: 15px;
+	}
+}
+
+@media (max-width:881px){
+	.inps{
+		margin-left: 40px;
+	}
+
+	.inp{
+		width: 250px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 770px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 570px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 230px;
+	}
+	.font_size{
+		font-size: 15px;
+	}
+	.legend-div{
+		font-size: 15px;
+	}
+}
+
+@media (max-width:868px){
+	.inps{
+		margin-left: 40px;
+	}
+
+	.inp{
+		width: 235px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 720px;
+		font-size: 1em;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+}
+
+@media (max-width:830px){
+	.inps{
+		margin-left: 40px;
+	}
+
+	.inp{
+		width: 250px;
+		font-size: 0.8em;
+	}
+	.bk{
+		width: 770px;
+		font-size: 1em;
+	}
+	.graph{
+		width: 570px;
+	}
+
+	.chart_changer{
+		width: 100px;
+	}
+	.inputs{
+		width: 230px;
+	}
+	.font_size{
+		font-size: 15px;
+	}
+	.legend-div{
+		font-size: 15px;
+	}
+}
+
+
+@media (max-width:767px){
+	
+}
+
+@media (max-width:420px){
+	
 }
